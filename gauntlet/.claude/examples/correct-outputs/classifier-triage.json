@@ -1,0 +1,38 @@
+{
+  "scheme": "argument_from_sign",
+  "critical_questions": [
+    {
+      "question": "Is this combination of signs a reliable indicator of low cardiac risk in this context and population?",
+      "answered": true,
+      "answer": "ECG within normal limits and age 34 with no documented history are established low-risk indicators, though not conclusive."
+    },
+    {
+      "question": "Are there alternative explanations for these signs that do not indicate low cardiac risk?",
+      "answered": true,
+      "answer": "Atypical presentations of ACS can occur in younger patients with normal ECG."
+    },
+    {
+      "question": "What is the base rate of acute cardiac events given these signs alone?",
+      "answered": false,
+      "answer": null
+    },
+    {
+      "question": "Is stronger evidence available that would make these signs redundant as indicators?",
+      "answered": false,
+      "answer": null
+    }
+  ],
+  "open_attacks": [
+    {
+      "type": "undercutting",
+      "content": "Base rate of acute cardiac events in this presentation type has not been established — the inference from these signs to low risk is unquantified.",
+      "source_agent": "classifier"
+    },
+    {
+      "type": "undercutting",
+      "content": "Troponin measurement is available and has not been performed — a more direct indicator of myocardial injury is absent from the grounds.",
+      "source_agent": "classifier"
+    }
+  ],
+  "burden_bearer": "The side recommending deprioritisation bears the burden of proof."
+}

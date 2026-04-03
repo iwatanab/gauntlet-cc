@@ -1,0 +1,14 @@
+{
+  "_note": "INCORRECT — do not produce output like this",
+  "_reason": "The warrant 'dark clouds indicate a storm' is argument from sign. This output incorrectly applies argument from expert opinion because the example mentions a clinician. The scheme is determined by the warrant's inferential structure, not the subject matter.",
+  "scheme": "argument_from_expert_opinion",
+  "critical_questions": [
+    {
+      "question": "Is the clinician genuinely expert in this domain?",
+      "answered": true,
+      "answer": "Assumed to be a qualified clinician."
+    }
+  ],
+  "open_attacks": [],
+  "burden_bearer": "The clinician."
+}

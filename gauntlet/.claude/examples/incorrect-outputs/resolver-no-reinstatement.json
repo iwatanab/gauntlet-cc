@@ -1,0 +1,22 @@
+{
+  "_note": "INCORRECT — do not produce output like this",
+  "_reason": "This output marks the claim as defeated without applying reinstatement. Attack U1 (troponin not measured) was the primary undercutting attack in cycle 1. In cycle 2, a troponin result was added to grounds. U1 is therefore defeated. The argument should be partially reinstated and U1 should be marked defeated in the rebuttal_log. The resolver must compute reinstatement, not assess it holistically.",
+  "attack_graph": {
+    "nodes": [
+      { "id": "A0", "description": "deprioritise this patient" },
+      { "id": "U1", "type": "undercutting", "description": "troponin not measured" }
+    ],
+    "edges": [{ "from": "U1", "to": "A0", "attack_type": "undercutting" }]
+  },
+  "extension": "preferred",
+  "verdict": "defeated",
+  "rebuttal_log": [
+    {
+      "timestamp": "2026-03-29T10:00:00Z",
+      "agent": "conflict-resolver",
+      "attack_type": "undercutting",
+      "content": "troponin not measured",
+      "status": "surviving"
+    }
+  ]
+}

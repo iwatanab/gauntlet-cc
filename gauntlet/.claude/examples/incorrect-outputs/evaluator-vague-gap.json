@@ -1,0 +1,6 @@
+{
+  "_note": "INCORRECT — do not produce output like this",
+  "_reason": "The acceptance_gap must specify what evidence is needed precisely enough for the constructor to query for it. 'Insufficient evidence' gives the constructor no retrieval constraint. 'More testing needed' is not actionable.",
+  "acceptance": false,
+  "acceptance_gap": "The argument lacks sufficient evidence to support deprioritisation. More testing is needed before this decision can be made safely."
+}
