@@ -1,0 +1,51 @@
+{
+  "agents": {
+    "constructor": {
+      "directory": "gauntlet/agents/constructor",
+      "allowedTools": ["WebSearch", "Read", "Write"],
+      "description": "Constructs the ArgumentUnit from the claim"
+    },
+    "classifier": {
+      "directory": "gauntlet/agents/classifier",
+      "allowedTools": ["Read"],
+      "description": "Classifies the argument scheme and attaches critical questions"
+    },
+    "exchange-auditor": {
+      "directory": "gauntlet/agents/exchange-auditor",
+      "allowedTools": ["Read"],
+      "description": "Audits the exchange for pragma-dialectics compliance"
+    },
+    "acceptance-evaluator": {
+      "directory": "gauntlet/agents/acceptance-evaluator",
+      "allowedTools": ["WebSearch", "Read"],
+      "description": "Establishes current domain criteria against the domain standard"
+    },
+    "conflict-resolver": {
+      "directory": "gauntlet/agents/conflict-resolver",
+      "allowedTools": ["Read"],
+      "description": "Computes which arguments survive the attack graph"
+    }
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/quality-monitor.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read(gauntlet/**)",
+      "Read(state/**)",
+      "Write(state/**)",
+      "Bash(.claude/hooks/**)",
+      "Bash(.claude/scripts/**)"
+    ]
+  }
+}
