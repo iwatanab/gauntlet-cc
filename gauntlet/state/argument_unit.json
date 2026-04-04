@@ -1,0 +1,128 @@
+{
+  "id": "arg-20260403-144059",
+  "cycle": 3,
+  "dialogue_type": "deliberation",
+  "domain_standard": "experienced information security professional with knowledge of supply chain risk management, familiar with NIST SP 800-161 and SOC 2 Trust Services Criteria",
+  "termination_limit": 3,
+  "claim": "require all third-party vendors to hold current SOC 2 Type II certification before integration access is granted",
+  "grounds": [
+    {
+      "content": "SOC 2 Type II reports provide an independent auditor's assessment that a service organisation's controls over security, availability, processing integrity, confidentiality, and privacy have operated effectively over a defined period (typically 6–12 months), not merely that they exist at a point in time.",
+      "source": "AICPA Trust Services Criteria, SOC 2 reporting framework",
+      "probative_weight": 0.88
+    },
+    {
+      "content": "NIST SP 800-161 (Cybersecurity Supply Chain Risk Management Practices) recommends contractual and evidence-based assurance mechanisms for third-party suppliers, including audit reports and certifications, as controls to reduce supply chain risk.",
+      "source": "NIST SP 800-161 Rev. 1, Section 2.1 and C-SCRM Controls",
+      "probative_weight": 0.82
+    },
+    {
+      "content": "Third-party vendors with integration access represent a significant attack surface: adversaries exploit supplier relationships to gain access to target networks (e.g., SolarWinds 2020, Target 2013). Vendors without verified security controls represent elevated inherent risk.",
+      "source": "CISA and ENISA supply chain threat intelligence reports; documented breach post-mortems",
+      "probative_weight": 0.79
+    },
+    {
+      "content": "For integration access purposes, the SOC 2 Security trust service category (Common Criteria CC6 — Logical and Physical Access Controls) is the minimum relevant category; Availability (A1) should also be required where service continuity is in scope. A valid certification for integration access purposes must cover at minimum the Security category applied to the systems relevant to the integration.",
+      "source": "AICPA Trust Services Criteria 2017; Cloud Security Alliance CAIQ; FedRAMP Third-Party Authorisation guidance",
+      "probative_weight": 0.78
+    },
+    {
+      "content": "NIST SP 800-161 Rev. 1 defines a tiered supplier risk model and recommends C-SCRM controls (including assurance requirements) be applied proportionate to vendor tier and criticality. Vendors with deep integration access to sensitive systems represent higher criticality tiers and warrant stronger assurance requirements than read-only or low-sensitivity integrations.",
+      "source": "NIST SP 800-161 Rev. 1, Appendix D — C-SCRM Tiered Risk Model",
+      "probative_weight": 0.76
+    },
+    {
+      "content": "Industry practice for managing the SOC 2 Type II temporal lag (reports issued 1–3 months after the audited period ends) includes: requiring reports issued within the preceding 12 months; supplementing with vendor attestations covering the gap period; and for high-criticality integrations, requiring continuous monitoring outputs (BitSight, SecurityScorecard, or equivalent) alongside the SOC 2 report.",
+      "source": "FedRAMP Continuous Monitoring Strategy Guide; ISACA CISM practitioner guidance; industry vendor management standards",
+      "probative_weight": 0.74
+    },
+    {
+      "content": "SOC 2 Type II certification creates an ongoing compliance signal: the report must be renewed annually, meaning stale or non-current certifications are identifiable and actionable gates in a vendor management programme.",
+      "source": "AICPA SOC 2 guide; vendor management best practice literature",
+      "probative_weight": 0.71
+    },
+    {
+      "content": "Regulatory frameworks including PCI DSS, HIPAA, and FedRAMP either require or create strong incentives for third-party security assurance; SOC 2 Type II is widely accepted as evidence of compliance with these upstream obligations.",
+      "source": "PCI DSS v4.0 Req. 12.8; HIPAA Security Rule §164.308(b); FedRAMP Third-Party Assessment guidance",
+      "probative_weight": 0.67
+    },
+    {
+      "content": "Cost of implementing a SOC 2 Type II gate: initial audit costs range from $30,000–$100,000 per vendor (vendor-side); the gate excludes vendors who cannot or have not invested in this certification, including small or specialised vendors, creating potential market access friction. Organisational implementation costs include programme management, vendor remediation support, procurement process changes, and transition timelines for existing vendor relationships.",
+      "source": "Tugboat Logic / OneTrust industry survey 2022; ISACA practitioner literature; vendor management programme cost analyses",
+      "probative_weight": 0.62
+    },
+    {
+      "content": "Comparative analysis of assurance mechanisms for integration-access vendors: ISO 27001 certifies management system existence, not operating effectiveness of controls over time — it is an insufficient substitute for SOC 2 Type II for this purpose. Security questionnaires (SIG, VSAQ, CAIQ) are self-assessed and non-independently verified, appropriate as triage for low-risk vendors but not as the primary gate for integration access. Right-to-audit clauses provide potential access but not systematic periodic assurance and scale poorly across a vendor programme. SOC 2 Type II provides independently tested evidence of operating control effectiveness over the audit period — the structurally strongest mechanism available at scale for integration-access vendor assurance.",
+      "source": "NIST SP 800-161 Rev. 1, C-SCRM Practice 3.2 (tiered assurance); CISA Third-Party Risk Management guidance; ISACA CISM Body of Knowledge; comparative analysis of ISO 27001 vs SOC 2 Type II in vendor management literature",
+      "probative_weight": 0.81
+    },
+    {
+      "content": "Operational feasibility: SOC 2 Type II is held by >70% of SaaS and cloud service providers serving enterprise customers (Drata/Vanta market surveys 2023–2024). For integration-access vendors specifically seeking enterprise relationships, adoption is higher. Standard enterprise vendor management programme implementation uses a 12–18 month transition window with a documented exception and risk-acceptance process (compensating controls required for vendors unable to certify within the window) — this approach is referenced in CISA SCRM guidance and common TPRM programme structures.",
+      "source": "Drata SOC 2 State of Trust Report 2023; Vanta State of Trust 2024; CISA ICT SCRM Task Force Vendor Risk Assessment guidance; TPRM industry practice",
+      "probative_weight": 0.73
+    }
+  ],
+  "warrant": "It is assumed that: a current SOC 2 Type II certification, scoped to the Security trust service category (and Availability where relevant) for systems relevant to the integration and issued within the preceding 12 months, is the most operationally scalable mechanism for independently verified, ongoing assurance of operating control effectiveness at the integration-access vendor tier — and is therefore the appropriate gate for integration access, to be implemented with a 12–18 month transition window and a documented exception process for vendors unable to certify within that timeline.",
+  "backing": null,
+  "qualifier": "presumably",
+  "scheme": "argument_from_practical_reasoning",
+  "critical_questions": [
+    {
+      "question": "Are there other actions that would achieve G?",
+      "answered": true,
+      "answer": "Ground 10 provides comparative analysis: ISO 27001 certifies management system existence not operating effectiveness; questionnaires are self-assessed and not independently verified; right-to-audit clauses scale poorly. SOC 2 Type II provides independently tested operating effectiveness at scale — structurally strongest available mechanism for this tier."
+    },
+    {
+      "question": "Is G the right goal given the circumstances?",
+      "answered": true,
+      "answer": "Ground 5: NIST SP 800-161 tiered risk model establishes integration-access vendors as higher criticality warranting stronger assurance requirements."
+    },
+    {
+      "question": "Does A have side effects that compromise G or produce worse outcomes?",
+      "answered": true,
+      "answer": "Ground 9: vendor-side audit costs ($30k–$100k) and organisational implementation costs (programme management, procurement changes, transition timelines) are named."
+    },
+    {
+      "question": "Is A possible given the constraints?",
+      "answered": true,
+      "answer": "Ground 11: >70% SaaS vendor SOC 2 Type II adoption rate; 12–18 month transition window with documented exception and risk-acceptance process is the standard enterprise TPRM implementation approach."
+    }
+  ],
+  "open_attacks": [],
+  "burden_bearer": "The side recommending the SOC 2 Type II requirement bears the burden of proof.",
+  "stage_audit": {
+    "confrontation": "Genuine standpoint present. No Freedom Rule violation. Satisfactory.",
+    "opening": "No blocking violations. Rule 6 satisfied: organisational implementation costs on table (Ground 9). Rule 2 satisfied: burden discharged — all four critical questions answered by updated grounds. No open attacks from classifier.",
+    "argumentation": "No blocking violations. No straw man, irrelevant conclusion, or begging the question. Comparative analysis (Ground 10) supports the warrant's inferential move. Feasibility addressed (Ground 11). Satisfactory.",
+    "blocked": false
+  },
+  "rule_violations": [],
+  "acceptance": true,
+  "acceptance_gap": null,
+  "attack_graph": {
+    "nodes": [
+      { "id": "A0", "description": "Require all third-party vendors to hold current SOC 2 Type II certification before integration access is granted" }
+    ],
+    "edges": []
+  },
+  "extension": "preferred",
+  "verdict": "survives",
+  "rebuttal_log": [
+    { "timestamp": "2026-04-03T14:41:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "No comparison with alternative assurance mechanisms present — inference that SOC 2 Type II is the appropriate action is unestablished relative to alternatives.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:41:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "Goal of reducing integration-access supply chain risk has not been calibrated to this organisation's specific risk profile — inference that this goal justifies this specific control is not grounded in context-specific evidence.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:41:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "No evidence of operational feasibility for the current vendor base — inference that this action can be implemented without disrupting existing integrations is unsupported.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:41:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Rule 6 blocking violation: organisational cost of implementing the SOC 2 Type II gate not presented as shared starting premise alongside supply chain risk.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:41:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Rule 2 blocking violation: burden of proof not discharged — CQ1 (alternatives to SOC 2 Type II), CQ2 (context-specific risk calibration), CQ4 (feasibility for current vendor base) remain unanswered.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:41:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Acceptance gap: SOC 2 scope and trust service categories unspecified for integration access validity; no risk-tiering per NIST SP 800-161 C-SCRM; temporal lag of Type II report not addressed by supplementary control.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:42:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "Cycle 1 U2 (risk calibration) — defeated by Ground 5 (NIST SP 800-161 Rev. 1 tiered risk model establishes integration-access vendors as higher criticality tier warranting stronger assurance).", "status": "defeated" },
+    { "timestamp": "2026-04-03T14:42:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Cycle 1 V1 (Rule 6 — organisational cost not on table) — defeated by Ground 9 (now explicitly names organisational implementation costs: programme management, procurement changes, transition timelines).", "status": "defeated" },
+    { "timestamp": "2026-04-03T14:42:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "No comparative evidence that SOC 2 Type II (scope-specified, risk-tiered) is preferable to or more effective than alternative assurance mechanisms (ISO 27001, right-to-audit, questionnaire programmes) — the inference that this specific action best achieves the supply chain risk reduction goal remains unestablished.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:42:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "No evidence that the SOC 2 Type II requirement is operationally feasible for the current vendor base — no vendor coverage data, transition timelines, or exception/risk-acceptance process provided.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:42:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Rule 2 blocking violation (cycle 2): CQ1 (comparative justification for SOC 2 Type II vs. alternatives) and CQ4 (operational feasibility for current vendor base) remain unanswered.", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:42:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Acceptance gap (cycle 2): comparative justification for SOC 2 Type II selection absent; operational feasibility assessment for current vendor base absent (vendor coverage, transition timeline, exception process).", "status": "surviving" },
+    { "timestamp": "2026-04-03T14:43:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "Cycle 2 U1 (alternatives) — defeated by Ground 10 (comparative analysis: SOC 2 Type II provides independently tested operating effectiveness that ISO 27001, questionnaires, and right-to-audit cannot at scale for integration-access vendor assurance).", "status": "defeated" },
+    { "timestamp": "2026-04-03T14:43:00Z", "agent": "conflict-resolver", "attack_type": "undercutting", "content": "Cycle 2 U2 (feasibility) — defeated by Ground 11 (>70% SaaS vendor SOC 2 Type II adoption; 12–18 month transition window with exception process is standard enterprise TPRM implementation approach).", "status": "defeated" },
+    { "timestamp": "2026-04-03T14:43:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Cycle 2 V2-c2 (Rule 2 — CQ1 and CQ4) — defeated: CQ1 answered by Ground 10 (comparative justification), CQ4 answered by Ground 11 (feasibility assessment with transition window and exception process).", "status": "defeated" },
+    { "timestamp": "2026-04-03T14:43:00Z", "agent": "conflict-resolver", "attack_type": "rebuttal", "content": "Cycle 2 G1-c2 (acceptance gap) — defeated: comparative justification addressed by Ground 10; feasibility assessment addressed by Ground 11.", "status": "defeated" }
+  ]
+}

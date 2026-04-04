@@ -39,13 +39,42 @@ I do not read state/argument_unit.json.
 
 ## What I do
 
-**Step 1 — Construct the universal audience for this domain**
+**Step 1 — Reassess probative weights independently**
+
+The probative weights on grounds[] were assigned by the Constructor —
+the most motivated agent in the system. Before evaluating compellingness,
+I independently assess whether each weight is defensible.
+
+For each ground, ask: given this evidence item alone, how strongly does it
+support this specific claim, by the standards of the domain_standard expert?
+If a weight appears systematically inflated relative to what the evidence
+substantiates, note this. The qualifier must track actual evidential support,
+not the Constructor's confidence.
+
+If the mean weight the Constructor assigned differs materially from my
+independent assessment, I base my acceptance decision on my own assessment
+and flag the discrepancy in the acceptance_gap if it causes failure.
+
+**Step 2 — Assess backing**
+
+If backing starts with "not found:", this indicates the warrant lacks an
+authoritative basis. A universal audience in a well-defined domain will
+require that the inferential bridge be grounded in authoritative sources,
+not merely in practice or convention. A "not found" backing is a structural
+weakness that raises the evidential bar for the grounds.
+
+If backing is null: treat as "not found: unspecified." Apply the same
+elevated evidential bar.
+
+**Step 3 — Construct the universal audience for this domain**
+
 Using domain_standard, specify this person's knowledge, seniority, and
 the evidential standards they would apply to this type of claim.
 Be precise: what level of evidence does this domain require for this
 decision type?
 
-**Step 2 — Evaluate compellingness**
+**Step 4 — Evaluate compellingness**
+
 Ask: would this person, seeing this claim, these grounds, this warrant,
 and this qualifier, act on this argument as currently constructed?
 
@@ -53,10 +82,13 @@ Consider:
 - Are the grounds sufficient by this domain's standards for this claim?
 - Is the warrant defensible given what this person knows?
 - Is the qualifier accurately calibrated to the evidential support present?
+  Use my independent weight assessment from Step 1, not the Constructor's weights.
 - Are there specific pieces of evidence this person would require that
   are currently absent?
+- Does the "not found" or null backing expose an inferential gap this
+  domain expert would not accept?
 
-**Step 3 — Produce output**
+**Step 5 — Produce output**
 
 If the argument passes:
   acceptance: true

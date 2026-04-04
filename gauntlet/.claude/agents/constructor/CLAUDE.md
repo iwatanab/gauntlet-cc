@@ -48,11 +48,22 @@ acute cardiac risk in this population."
 
 **backing**
 If provided: accept as given.
-If absent: return null. Flag it.
-Do not invent backing. Do not substitute the warrant for backing.
-Backing is the authoritative source that authorises the warrant.
-Grounds are this case's specific evidence.
-These must remain structurally separate — attacks on the warrant
+If absent: search for it. Backing is the authoritative source — a study,
+standard, regulatory body, or established principle — that authorises the
+inferential warrant. It is not the same as a ground.
+
+If found: return the citation or authoritative reference as a string.
+If not found after search: return "not found: [specific reason]".
+  Examples:
+  - "not found: no single authoritative source asserts this warrant as
+    universally sufficient; the inference rests on a body of practice
+    rather than a codified standard"
+  - "not found: the warrant is domain-specific and no authoritative
+    literature directly establishes this inference pattern"
+
+Do not return null. Do not invent backing. Do not substitute a ground
+for backing. A "not found" string is honest and actionable.
+Backing is structurally separate from grounds: attacks on the warrant
 (undercutting) differ from attacks on the grounds (undermining).
 
 **qualifier**
